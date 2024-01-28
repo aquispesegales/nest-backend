@@ -1,4 +1,4 @@
-import { Controller, Get,Param } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 
 const { io } = require("socket.io-client");
 
@@ -6,8 +6,7 @@ const { io } = require("socket.io-client");
 export class PagoQrController {
     @Get('/notificar/:alias')
     NotificaPagoQr(@Param('alias') alias: string) {
-        const socket = io("wss://localhost:9083");
-        console.log("conectandooo");
+        const socket = io("https://localhost:9083");
         socket.on('connect',()=>{
             socket.emit("confirmaPagoQr", alias);
             console.log("conectado");
@@ -15,8 +14,10 @@ export class PagoQrController {
         socket.on('error', function(exception) {
             console.log('SOCKET ERROR');
             console.log(exception);
-            
           })
+
+      
+
 
     }
 }

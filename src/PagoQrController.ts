@@ -7,7 +7,7 @@ export class PagoQrController {
     @Get('/notificar/:alias')
     NotificaPagoQr(@Param('alias') alias: string) {
 
-        const socket = io("wss://quickpay.com.bo:9082");
+        const socket = io("wss://quickpay.com.bo:9083");
         console.log("conectandooo");
         socket.on('connect',()=>{
             socket.emit("confirmaPagoQr", alias);

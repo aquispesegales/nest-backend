@@ -7,6 +7,7 @@ export class PagoQrController {
     @Get('/notificar/:alias')
     NotificaPagoQr(@Param('alias') alias: string) {
         const socket = io("https://localhost:9083");
+        console.log("conetandoooooooo");
         socket.on('connect',()=>{
             socket.emit("confirmaPagoQr", alias);
             console.log("conectado");

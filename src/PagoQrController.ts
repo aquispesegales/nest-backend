@@ -9,7 +9,7 @@ export class PagoQrController {
 
 
     const socket = io('wss://localhost:9083',{
-      transports: ['websocket']
+      transports: ['websocket','polling']
     });
     console.log("back socket por conectar")
 

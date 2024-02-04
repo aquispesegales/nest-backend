@@ -22,7 +22,7 @@ export class PagoQrController {
 
     socket.on("connect_error", (err) => {
       console.log("error");
-      console.log(err.message);
+      console.log(err);
     });
 
 

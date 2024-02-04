@@ -8,8 +8,8 @@ export class PagoQrController {
   NotificaPagoQr(@Param('alias') alias: string) {
 
 
-    const socket = io('wss://localhost:9083',{
-      transports: ['websocket','polling']
+    const socket = io('https://localhost:9083',{
+      transports:['websocket']
     });
     console.log("back socket por conectar")
 
@@ -18,6 +18,8 @@ export class PagoQrController {
       socket.emit("confirmaPagoQr", alias);
       console.log("back socket emitidos")
     });
+
+
     socket.on("connect_error", (err) => {
       console.log("error");
       console.log(err.message);

@@ -9,8 +9,11 @@ export class PagoQrController {
 
 
     const socket = io('https://quickpay.com.bo:9083',{
-      transports:['websocket']
+      transports:['websocket'],
+      secure: true,
+      rejectUnauthorized:false
     });
+
     console.log("back socket por conectar")
 
     socket.on('connect', () => {

@@ -8,7 +8,7 @@ export class PagoQrController {
   NotificaPagoQr(@Param('alias') alias: string) {
 
 
-    const socket = io('https://localhost:9083',{
+    const socket = io('https://quickpay.com.bo:9083',{
       transports:['websocket']
     });
     console.log("back socket por conectar")

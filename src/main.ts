@@ -6,8 +6,8 @@ import { VersioningType } from '@nestjs/common';
 async function bootstrap() {
 
   const httpsOptions = {
-    key: fs.readFileSync('./secrets/private.key'),
-    cert: fs.readFileSync('./secrets/certificate.crt'),
+    key: fs.readFileSync('/etc/ssl-exacta/certificate.crt'),
+    cert: fs.readFileSync('/etc/ssl-exacta/private.key'),
   };
   const app = await NestFactory.create(AppModule, {
     httpsOptions,

@@ -1,10 +1,14 @@
 import { Module } from '@nestjs/common';
-import {PagoQrController} from './PagoQrController';
+import { QrModule } from './qr/qr.module';
+import { ConfigModule } from '@nestjs/config';
+
+
 
 
 @Module({
-  imports: [],
-  controllers: [PagoQrController],
+  
+  imports: [ConfigModule.forRoot(),QrModule],
+  controllers: [],
   providers: [],
 })
 export class AppModule {}

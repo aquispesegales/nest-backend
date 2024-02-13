@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as fs  from 'fs';
+import { VersioningType } from '@nestjs/common';
 
 async function bootstrap() {
 
@@ -12,8 +13,11 @@ async function bootstrap() {
     httpsOptions,
   });
 
-  //const app = await NestFactory.create(AppModule);
-
-  await app.listen(9082);
+  //const app = await NestFactory.create(AppModule,{cors:true});
+  app.enableVersioning({
+    defaultVersion:'1',
+    type: VersioningType.URI
+  });
+  await app.listen(process.env.PORT);
 }
 bootstrap();

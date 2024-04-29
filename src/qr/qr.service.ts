@@ -10,6 +10,7 @@ import * as fs from 'fs';
 export class QrService {
     constructor(private readonly httpService: HttpService) { }
     confirmarWS(alias: string): void {
+        console.log("CONFIRMANDO SOKETE .....................")
         const socket = io(process.env.WS, {
             transports: ['websocket'],
             secure: true,

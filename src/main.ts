@@ -18,6 +18,9 @@ async function bootstrap() {
     defaultVersion:'1',
     type: VersioningType.URI
   });*/
-  await app.listen(process.env.PORT);
+  app.enableCors();
+  await app.listen(9082);
+
+  //await app.listen(process.env.PORT);
 }
 bootstrap();

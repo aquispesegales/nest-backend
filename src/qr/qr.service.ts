@@ -11,7 +11,7 @@ export class QrService {
     constructor(private readonly httpService: HttpService) { }
     confirmarWS(alias: string): void {
         console.log("CONFIRMANDO SOKETE .....................")
-        const socket = io(process.env.WS, {
+        const socket = io('https://quickpay.com.bo:9083', {
             transports: ['websocket'],
             secure: true,
             rejectUnauthorized: false

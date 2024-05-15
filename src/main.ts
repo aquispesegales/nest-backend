@@ -19,8 +19,8 @@ async function bootstrap() {
     type: VersioningType.URI
   });*/
   app.enableCors();
-  await app.listen(9082);
+  await app.listen(7082); // QAS
+  //await app.listen(9082); // PRD
 
-  //await app.listen(process.env.PORT);
 }
 bootstrap();

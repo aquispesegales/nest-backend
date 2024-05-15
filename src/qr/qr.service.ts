@@ -11,11 +11,21 @@ export class QrService {
     constructor(private readonly httpService: HttpService) { }
     confirmarWS(alias: string): void {
         console.log("CONFIRMANDO SOKETE .....................")
-        const socket = io('https://quickpay.com.bo:9083', {
+
+        //prd
+        /*const socket = io('https://quickpay.com.bo:9083', {
+            transports: ['websocket'],
+            secure: true,
+            rejectUnauthorized: false
+        });*/
+
+        //qas
+        const socket = io('https://quickpay.com.bo:7083', {
             transports: ['websocket'],
             secure: true,
             rejectUnauthorized: false
         });
+
         socket.on('connect', () => {
             console.log("back socket conectado")
             socket.emit("confirmaPagoQr", alias);
